@@ -1,2 +1,12 @@
 ---
 # tasks file for dotfonts
+
+- name: Including package installation
+  ansible.builtin.include_tasks: install_packages.yml
+  when: dotfonts_install.enable|bool
+
+- name: Preparing the install dir
+  ansible.builtin.include_tasks: install_dir.yml
+
+- name: Installing font from URL
+  ansible.builtin.include_tasks: install_blob_file.yml

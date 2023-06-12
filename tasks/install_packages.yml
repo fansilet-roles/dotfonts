@@ -1,0 +1,6 @@
+---
+- name: Installing packages
+  ansible.builtin.dnf:
+    name: "{{ dotfonts_install.packages }}"
+    state: present
+  become: true

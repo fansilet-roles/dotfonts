@@ -1,2 +1,26 @@
 ---
 # defaults file for dotfonts
+#
+# enable and install the packages on the system
+dotfonts_install:
+    enable: true
+    packages:
+    - fontconfig
+    - fontawesome-fonts
+    - fontawesome-fonts-web
+    - fontawesome5-brands-fonts
+    - fontawesome5-fonts-web
+    - fontawesome5-free-fonts
+
+# define the font installation path (default "$HOME/.local/share/fonts")
+font_install_dir: "{{ __default_font_dir }}"
+
+# list the custom fonts to install
+dotfonts_files:
+  - name: Mononoki
+    version: "1.2"
+    # yamllint disable-line
+    url: "https://github.com/madmalik/mononoki/releases/download/1.2/mononoki.zip"
+    file: "{{ font_install_dir }}/mononoki.zip"
+    extract: true
+    clean: true

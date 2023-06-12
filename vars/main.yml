@@ -1,2 +1,5 @@
 ---
 # vars file for dotfonts
+
+# the default font installation directory path
+__default_font_dir: "{{ ansible_facts['env']['HOME'] }}/.local/share/fonts"

@@ -1,0 +1,28 @@
+---
+- name: Downloading font file
+  ansible.builtin.get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.file }}"
+  loop: "{{ dotfonts_files }}"
+  register: __download_stat
+
+- name: "Extracting the font"
+  ansible.builtin.unarchive:
+    src: "{{ item.file }}"
+    dest: "{{ font_install_dir }}"
+    remote_src: true
+  loop: "{{ dotfonts_files }}"
+  when: item.extract|bool
+  register: __extract_stat
+
+- name: Removing trash files
+  ansible.builtin.file:
+    path: "{{ item.file }}"
+    state: absent
+    force: true
+  loop: "{{ dotfonts_files }}"
+  when: item.clean|bool
+  register: __clean_stat
+
+- ansible.builtin.debug:
+    msg: "{{ __download_stat.changed }}"
