@@ -1,2 +1,9 @@
 ---
 # handlers file for dotfonts
+- name: "Update Font Cache"
+  ansible.builtin.command:
+    argv:
+      - fc-cache 
+      - -fv
+      - "{{ font_install_dir }}"
+
