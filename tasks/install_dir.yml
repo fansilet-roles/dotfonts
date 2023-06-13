@@ -1,8 +1,0 @@
----
-- name: Making sure the install path exist
-  ansible.builtin.file:
-    path: "{{ font_install_dir }}"
-    state: directory
-    owner: "{{ ansible_facts['env']['USER'] }}"
-    group: "{{ ansible_facts['user_gid'] }}"
-

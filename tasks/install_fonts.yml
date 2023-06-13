@@ -1,4 +1,11 @@
 ---
+- name: Making sure the install path exist
+  ansible.builtin.file:
+    path: "{{ dotfonts_install_dir }}"
+    state: directory
+    owner: "{{ ansible_facts['env']['USER'] }}"
+    group: "{{ ansible_facts['user_gid'] }}"
+
 - name: Downloading font file
   ansible.builtin.get_url:
     url: "{{ item.url }}"
@@ -11,7 +18,7 @@
 - name: "Extracting the font"
   ansible.builtin.unarchive:
     src: "{{ item.file }}"
-    dest: "{{ font_install_dir }}"
+    dest: "{{ dotfonts_install_dir }}"
     remote_src: true
   loop: "{{ dotfonts_files }}"
   when: item.extract|bool

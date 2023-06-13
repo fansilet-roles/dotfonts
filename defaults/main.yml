@@ -13,7 +13,7 @@ dotfonts_install:
     - fontawesome5-free-fonts
 
 # define the font installation path (default "$HOME/.local/share/fonts")
-font_install_dir: "{{ __default_font_dir }}"
+dotfonts_install_dir: "{{ __default_font_dir }}"
 
 # list the custom fonts to install
 dotfonts_files:
@@ -21,7 +21,7 @@ dotfonts_files:
     version: "1.2"
     # yamllint disable-line
     url: "https://github.com/madmalik/mononoki/releases/download/1.2/mononoki.zip"
-    file: "{{ font_install_dir }}/mononoki.zip"
+    file: "{{ dotfonts_install_dir }}/mononoki.zip"
     extract: true
     clean: true
 
@@ -29,7 +29,7 @@ dotfonts_files:
     version: "v3.0.2"
     # yamllint disable-line
     url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/DroidSansMono.zip"
-    file: "{{ font_install_dir }}/DroidSansMono.zip"
+    file: "{{ dotfonts_install_dir }}/DroidSansMono.zip"
     extract: true
     clean: true
 
@@ -37,7 +37,7 @@ dotfonts_files:
     version: "v3.0.2"
     # yamllint disable-line
     url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.tar.xz"
-    file: "{{ font_install_dir }}/Hack.tar.xz"
+    file: "{{ dotfonts_install_dir }}/Hack.tar.xz"
     extract: true
     clean: true
 
@@ -48,7 +48,6 @@ dotfonts_files:
     version: "v0.18"
     # yamllint disable-line
     url: "https://github.com/Lukas-W/font-logos/releases/download/v0.18/font-logos-v0.18.zip"
-    file: "{{ font_install_dir }}/font-logos-v0.18.zip"
+    file: "{{ dotfonts_install_dir }}/font-logos-v0.18.zip"
     extract: true
     clean: true
-
