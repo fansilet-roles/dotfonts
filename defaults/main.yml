@@ -24,3 +24,31 @@ dotfonts_files:
     file: "{{ font_install_dir }}/mononoki.zip"
     extract: true
     clean: true
+
+  - name: Droid Sans Mono Nerd-Fonts
+    version: "v3.0.2"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/DroidSansMono.zip"
+    file: "{{ font_install_dir }}/DroidSansMono.zip"
+    extract: true
+    clean: true
+
+  - name: Hack Nerd-Fonts
+    version: "v3.0.2"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.tar.xz"
+    file: "{{ font_install_dir }}/Hack.tar.xz"
+    extract: true
+    clean: true
+
+  - name: Font Logos
+    description: |
+      "An icon font containing logos of popular linux distributions and other 
+      open source software for inclusion in websites"
+    version: "v0.18"
+    # yamllint disable-line
+    url: "https://github.com/Lukas-W/font-logos/releases/download/v0.18/font-logos-v0.18.zip"
+    file: "{{ font_install_dir }}/font-logos-v0.18.zip"
+    extract: true
+    clean: true
+
