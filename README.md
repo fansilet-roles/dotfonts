@@ -1,38 +1,85 @@
-Role Name
+dotfonts
 =========
 
-A brief description of the role goes here.
+DotFonts or `.fonts` is an ansible role used to install fonts on the system.  
+By default it will install these initiall fonts:  
+
+- [Mononoki](https://github.com/madmalik/mononoki/)  
+- [Droid Sans Mono Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/DroidSansMono)  
+- [Hack Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)  
+- [Font Logos](https://github.com/Lukas-W/font-logos)  
+
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+* ansible >= 2.11.12
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+All the supported variables can be listed from `defaults/main.yml` file, here is more info about it:  
+
+
+* `dotfonts_install`    - `(dict)`  -  a dictionary that can be used to enable or disable the package installation  
+ 
+* `dotfonts_install_dir`  - `(str)` - a string value for the path where the fonts will be installed. `(defaults "$HOME/.local/share/fonts")`  
+
+* `dotfonts_files`  - `(list)`  - a dict list of fonts to be installed. 
+
+
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+* Basic default usage
+```yaml
+---
+- hosts: servers
+  roles:
+  - { role: mrbrandao.dotfonts }
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+* Installing custom fonts  
+
+```yaml
+---
+- hosts: servers
+  vars:
+    dotfonts_files:
+      - name: MyFont-TTF
+        url: "https://myfont.com/myfont.ttf"
+        file: "{{ dotfonts_install_dir }}/myfont.ttf"
+        extract: false
+        clean: false
+
+      - name: MyFont-ZIP
+        url: "https://myfont.com/myfont.zip"
+        file: "{{ dotfonts_install_dir }}/myfont.zip"
+        extract: true # enable the file extraction
+        clean: true # remove the zip file after extracted
+
+      - name: GlobalSystemFont
+        url: "https://myfont.com/myfont.otf"
+        file: "/usr/share/fonts/myfont.otf"
+        extract: false 
+        clean: false 
+
+  roles:
+  - { role: mrbrandao.dotfonts }
+```
 
 License
 -------
 
-BSD
+GPL-3.0-only
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+@mrbrandao - Igor Brandao - https://github.com/mrbrandao
