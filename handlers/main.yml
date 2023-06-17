@@ -5,5 +5,5 @@
     argv:
       - fc-cache 
       - -fv
-      - "{{ font_install_dir }}"
+      - "{{ dotfonts_install_dir }}"
 

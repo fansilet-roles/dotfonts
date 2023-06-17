@@ -51,3 +51,88 @@ dotfonts_files:
     file: "{{ dotfonts_install_dir }}/font-logos-v0.18.zip"
     extract: true
     clean: true
+
+  - name: Droid Sans Mono for Powerline Nerd Font Complete
+    description: |
+      "An old patched version of DroidSans for retrocompability"
+    version: "v2.1.0"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/raw/fa69496f5a3291fbcb6c0ad5bcec9c8bcab842fc/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf"
+    # yamllint disable-line
+    file: "{{ dotfonts_install_dir }}/Droid_Sans_Mono_Powerline_Nerd_Font_Complete_v210.otf"
+    extract: false
+    clean: false
+
+  - name: Devicons
+    description: |
+      "The devicons font v2.15.0"
+    version: "v2.15.0"
+    url: "https://github.com/devicons/devicon/raw/master/fonts/devicon.ttf"
+    file: "{{ dotfonts_install_dir }}/devicon_v2150.ttf"
+    extract: false
+    clean: false
+
+  - name: Font Mfizz
+    description: |
+      Font Mfizz - Vector Icons for Technology and Software Geek 
+       more at https://cdnjs.com/libraries/font-mfizz
+    version: "2.4.1"
+    # yamllint disable-line
+    url: "https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.ttf"
+    file: "{{ dotfonts_install_dir }}/font-mfizz.ttf"
+    extract: false
+    clean: false
+
+  - name: Go Mono
+    description: |
+      "Go is a font created for the Go project.
+      https://go.dev/blog/go-fonts
+      For more information have a look at the 
+      upstream website: https://go.googlesource.com/image/
+      Download link https://go.googlesource.com/image/+/master/font/gofont/ttfs/"
+    version: "v3.0.2"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Go-Mono.tar.xz"
+    file: "{{ dotfonts_install_dir }}/go-mono-v3.0.2.tar.xz"
+    extract: true
+    clean: true
+
+  - name: IA-Writer
+    description: |
+      "These are fonts from iA. Duo and Quattro are almost monospaced 
+      but allow more room for some letters. 
+      See http://ia.net/topics/in-search-of-the-perfect-writing-font/
+      For more information have a look at the upstream 
+      website: https://github.com/iaolo/iA-Fonts"
+    version: "v3.0.2"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/iA-Writer.tar.xz"
+    file: "{{ dotfonts_install_dir }}/ia-writer-v3.0.2.tar.xz"
+    extract: true
+    clean: true
+
+  - name: Terminus
+    description: |
+      "Terminus TTF is a TrueType version of Terminus Font, a fixed-width 
+      bitmap font optimized for long work with computers. 
+      https://terminus-font.sourceforge.net/
+      For more information have a look at the upstream website: 
+      https://files.ax86.net/terminus-ttf/"
+    version: "v3.0.2"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Terminus.tar.xz"
+    file: "{{ dotfonts_install_dir }}/Terminus-v3.0.2.tar.xz"
+    extract: true
+    clean: true
+
+  - name: JetBrainsMono
+    description: |
+      "JetBrains Mono: a typeface made for developers
+      For more information have a look at the upstream website: 
+      https://github.com/JetBrains/JetBrainsMono"
+    version: "v3.0.2"
+    # yamllint disable-line
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.tar.xz"
+    file: "{{ dotfonts_install_dir }}/JetBrainsMono-v3.0.2.tar.xz"
+    extract: true
+    clean: true
