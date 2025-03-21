@@ -1,0 +1,7 @@
+---
+driver:
+  name: podman
+platforms:
+  - name: dotfonts_instance
+    image: registry.fedoraproject.org/fedora-minimal:41 
+    pre_build_image: true

@@ -1,4 +1,10 @@
 ---
+- name: "Gathering Dependency Facts"
+  ansible.builtin.setup:
+    filter:
+      - 'env'
+      - 'user_*'
+
 - name: Making sure the install path exist
   ansible.builtin.file:
     path: "{{ dotfonts_install_dir }}"

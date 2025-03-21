@@ -1,0 +1,16 @@
+---
+- name: Prepate
+  hosts: all
+  gather_facts: false
+  pre_tasks:
+    - name: Installing Python
+      ansible.builtin.raw: dnf -y install python3 libselinux python3-libdnf5
+
+    - name: Installing Packages
+      ansible.builtin.dnf:
+        name:
+          - xz
+          - unzip
+          - bzip2
+          - tar
+          - sudo
