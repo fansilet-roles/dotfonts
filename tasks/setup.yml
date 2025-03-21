@@ -1,0 +1,8 @@
+---
+# the initial setup tasks for dotfonts
+- name: "Gathering Dependency Facts"
+  ansible.builtin.setup:
+    filter:
+      - 'env'
+      - 'user_*'
+      - 'pkg_mgr*'
